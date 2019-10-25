@@ -1,0 +1,27 @@
+.input-field {
+    background-color: var(--bg-light);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid var(--bg-light-blue);
+    border-radius: 24px;
+    font-size: 13px;
+    padding: 8px 16px;
+    transition: 250ms;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--bg-primary);
+}
+
+.input-field-date {
+    width: 100%;
+}
+
+.date-wrapper, 
+.date-wrapper > div.react-datepicker-wrapper, 
+.date-wrapper > div > div.react-datepicker__input-container
+.date-wrapper > div > div.react-datepicker__input-container input {
+   width: 100%;
+}
