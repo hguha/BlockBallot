@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+
 import Button from './Button';
 import Input from './Input';
+
 import '../styles/ColorScheme.css';
 import '../styles/VoterRegistration.css';
 import logo from '../assets/logos/logo.png';
@@ -12,9 +14,7 @@ function VoterRegistration() {
     const [ssn, setSSN] = useState("");
 
     function handleTextChange(event) {
-        console.log(event.target);
         if (event.target.name === "field-name") {
-            console.log("here");
             setName(event.target.value);
         } else if (event.target.name === "field-ssn") {
             setSSN(event.target.value);
@@ -44,8 +44,11 @@ function VoterRegistration() {
             <div className="voter-registration-input-container">
                 <Input placeholder="Social Security Number" onChange={handleTextChange} name="field-ssn" />
             </div>
+            <div className="voter-registration-input-container">
+                <Input placeholder="Email Address" onChange={handleTextChange} name="field-email" />
+            </div>
             <div className="voter-registration-submit-container">
-                <Button text="Submit" enabled={isReadySubmit} variant="bg-primary-outline" />
+                <Button text="Verify" enabled={isReadySubmit} variant="bg-primary-outline" />
             </div>
         </div>
     );

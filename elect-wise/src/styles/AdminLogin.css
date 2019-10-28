@@ -1,4 +1,4 @@
-.voter-registration-container {
+.admin-login-container {
     background-color: var(--bg-light);
     border-radius: 16px;
     height: fit-content;
@@ -17,7 +17,7 @@
     box-shadow:         0px 2px 5px 2px rgba(0, 0, 0, 0.25);
 }
 
-.voter-registration-input-container {
+.admin-login-input-container {
     margin: 8px 0px;
     width: 75%;
     margin-left: auto;
@@ -25,29 +25,21 @@
     text-align: center;
 }
 
-.voter-registration-logo {
+.admin-login-logo {
     border-radius: 50%;
     width: 50%;
 }
 
-.voter-registration-logo-container {
+.admin-login-logo-container {
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 32px;
     width: 100%;
 }
 
-.voter-registration-submit-container {
+.admin-login-submit-container {
     display: flex;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
     width: 75%;
-}
-
-.voter-registration-title {
-    margin: 24px 0px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
 }
