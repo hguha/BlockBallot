@@ -33,3 +33,26 @@
     text-align: center;
     width: 100%;
 }
+
+.admin-sidebar-menu a{
+    display: block;
+    font-size: 20px;
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.admin-sidebar-menu a:hover{
+    transform: translateX(5px);
+    color: gray;
+}
+
+.admin-sidebar-menu .menu-item {
+    border-bottom: 1px solid gray;
+}
+
+.admin-sidebar-menu .menu-item:first-of-type {
+    border-top: 1px solid gray;
+}
