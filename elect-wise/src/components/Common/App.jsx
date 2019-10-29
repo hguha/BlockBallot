@@ -5,6 +5,7 @@ import AdminLogin from '../Admin/AdminLogin';
 import AdminDashboard from '../Admin/AdminDashboard';
 import VoterRegistration from '../Voter/VoterRegistration';
 import VoterDashboard from '../Voter/VoterDashboard';
+import Login from './Login';
 
 import '../../styles/App.css';
 
@@ -22,8 +23,11 @@ function App() {
           <Route path="/voter/dashboard">
             <VoterDashboard />
           </Route>
-          <Route path="/">
+          <Route path="/voter">
             <VoterRegistration />
+          </Route>
+          <Route path="/">
+            <Login />
           </Route>
         </Switch>
       }

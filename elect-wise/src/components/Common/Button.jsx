@@ -26,7 +26,7 @@ function Button(props) {
         onClick,
         size,
         text,
-        variant
+        variant,
     } = props;
 
     if (enabled) {
