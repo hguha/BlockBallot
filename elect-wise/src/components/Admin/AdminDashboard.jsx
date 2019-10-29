@@ -31,7 +31,20 @@ function AdminSidebar(props) {
     const {
         organization,
         username,
-        menuItems = ['Home', 'Settings', 'Elections']
+        menuItems = [
+            {
+                name : "Home",
+                route : "/admin/dashboard",
+            },
+            {
+                name : "Elections",
+                route : "/admin/elections",
+            },
+            {
+                name : "Settings",
+                route : "/admin/settings",
+            }
+        ]
     } = props;
 
     return (
@@ -46,8 +59,8 @@ function AdminSidebar(props) {
                 {organization}
             </div>
             <div className="admin-sidebar-menu">
-              {menuItems.map((value, index) => {
-                return <div class="menu-item"><a >{value}</a></div>
+              {menuItems.map((item) => {
+                return <div class="menu-item"><a src={item.route}>{item.name}</a></div>
               })}
             </div>
         </div>
