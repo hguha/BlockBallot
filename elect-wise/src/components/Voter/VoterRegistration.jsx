@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-import Button from './Button';
-import Input from './Input';
+import Button from '../Common/Button';
+import Input from '../Common/Input';
 
-import '../styles/ColorScheme.css';
-import '../styles/VoterRegistration.css';
-import logo from '../assets/logos/logo.png';
+import '../../styles/ColorScheme.css';
+import '../../styles/VoterRegistration.css';
+import logo from '../../assets/logos/logo.png';
 
 function VoterRegistration() {
     const [isReadySubmit, setIsReadySubmit] = useState(false);

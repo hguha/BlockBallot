@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 
-import '../styles/Input.css';
-import '../styles/ColorScheme.css';
+import '../../styles/Input.css';
+import '../../styles/ColorScheme.css';
 import "react-datepicker/dist/react-datepicker.css";
 
 const propTypes = {
@@ -30,7 +30,7 @@ function Input(props) {
         onChange,
         placeholder
     } = props;
-    
+
     const [selectedDate, setSelectedDate] = useState();
 
     function handleDateChange(date) {
@@ -42,8 +42,8 @@ function Input(props) {
         return (
             <div className="date-wrapper" name={name}>
                 <DatePicker
-                    className="input-field" 
-                    selected={selectedDate} 
+                    className="input-field"
+                    selected={selectedDate}
                     onChange={handleDateChange}
                     placeholderText={placeholder}
                     showMonthDropdown

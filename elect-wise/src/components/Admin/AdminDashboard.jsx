@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../styles/ColorScheme.css';
-import '../styles/AdminDashboard.css';
-import logo from '../assets/logos/logo.png';
+import '../../styles/ColorScheme.css';
+import '../../styles/AdminDashboard.css';
+import logo from '../../assets/logos/logo.png';
 
 const propTypes = {
     organization: PropTypes.string,

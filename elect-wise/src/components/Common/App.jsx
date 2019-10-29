@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import AdminLogin from './AdminLogin';
-import AdminDashboard from './AdminDashboard';
-import VoterRegistration from './VoterRegistration';
-import VoterDashboard from './VoterDashboard';
+import AdminLogin from '../Admin/AdminLogin';
+import AdminDashboard from '../Admin/AdminDashboard';
+import VoterRegistration from '../Voter/VoterRegistration';
+import VoterDashboard from '../Voter/VoterDashboard';
 
-import '../styles/App.css';
+import '../../styles/App.css';
 
 function App() {
   return (
