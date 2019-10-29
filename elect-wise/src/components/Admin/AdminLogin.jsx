@@ -21,6 +21,12 @@ function AdminLogin() {
         setIsReadySubmit(username.length > 0 && password.length > 0);
     }
 
+    function tryLogin() {
+        //api request to server, check if login exists
+        //if exists, route them to new page
+        //if not, add some red text under Login that says "username or password was incorrect"
+    }
+
     return (
         <div className="admin-login-container">
             <div className="admin-login-logo-container">
@@ -33,7 +39,7 @@ function AdminLogin() {
                 <Input placeholder="Password" onChange={handleInputChange} name="field-password" isPassword={true} />
             </div>
             <div className="admin-login-submit-container">
-                <Button text="Login" enabled={isReadySubmit} variant="bg-primary-outline" />
+                <Button onClick={tryLogin} text="Login" enabled={isReadySubmit} variant="bg-primary-outline" />
             </div>
         </div>
     );

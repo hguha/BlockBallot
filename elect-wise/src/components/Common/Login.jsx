@@ -7,7 +7,7 @@ import '../../styles/ColorScheme.css';
 import '../../styles/AdminLogin.css';
 import logo from '../../assets/logos/logo.png';
 
-function AdminLogin() {
+function Login() {
     const [isReadySubmit, setIsReadySubmit] = useState(false);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -18,6 +18,7 @@ function AdminLogin() {
     }
 
     return (
+
         <div className="admin-login-container">
             <div className="admin-login-logo-container">
                 <img className="admin-login-logo" src={logo} alt="ElectWise" />
@@ -30,4 +31,4 @@ function AdminLogin() {
     );
 }
 
-export default AdminLogin;
+export default Login;
