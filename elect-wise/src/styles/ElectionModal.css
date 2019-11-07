@@ -1,0 +1,115 @@
+.election-modal-container {
+    background-color: rgba(63, 64, 69, 0.5);
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.election-modal {
+    background-color: var(--bg-light);
+    border-radius: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+    width: 70%;
+
+    -moz-box-shadow:    0px 2px 5px 2px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.25);
+    box-shadow:         0px 2px 5px 2px rgba(0, 0, 0, 0.25);
+
+    -webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+	-webkit-transition: ease-in-out 250ms;
+	-moz-transition: ease-in-out 250ms;
+    transition: ease-in-out 250ms;
+}
+
+.election-modal-category-title {
+    color: var(--bg-disabled);
+    width: 100%;
+}
+
+.election-modal-election-detail {
+    margin: 8px 0px;
+}
+
+.election-modal-pie-chart-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.election-modal-footer-button-container {
+    margin-left: 8px;
+    width: 50%;
+}
+
+.election-modal-footer-buttons-container {
+    display: flex;
+    width: 30%;
+}
+
+.election-modal-footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.election-modal-footer-step-container {
+    color: var(--bg-disabled);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.election-modal-information-container {
+    width: 50%;
+}
+
+.election-modal-options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 32px 0px;
+    width: 100%;
+}
+
+.election-modal-statistics-container {
+    width: 50%;
+}
+
+.election-modal-election-title {
+    font-size: 32px;
+    margin: 8px 0px;
+}
+
+.animate-in {
+    -webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.selectable-item-container {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    margin: 4px 4px 4px 0px;
+    padding: 16px 16px;
+    transition: 250ms;
+}
+
+.selectable-item-container:hover {
+    background-color: var(--bg-light-blue);
+    cursor: pointer;
+}
+
+.selected {
+    background-color: var(--bg-light-blue);
+}

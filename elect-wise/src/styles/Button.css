@@ -4,7 +4,6 @@
     padding: 8px 16px;
     text-align: center;
     transition: 350ms;
-    width: 100%;
 }
 
 .button::after {
@@ -53,7 +52,6 @@
 
 .disabled {
     background-color: var(--bg-disabled);
-    border: 1px solid var(--bg-disabled);
     cursor: not-allowed;
     opacity: .25;
 }

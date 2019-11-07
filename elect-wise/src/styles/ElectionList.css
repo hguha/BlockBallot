@@ -1,0 +1,36 @@
+.election-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 32px;
+    justify-content: space-evenly;
+}
+
+.election-list-header-container {
+    background-color: var(--bg-light);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    display: flex;
+    margin-bottom: 16px;
+    padding: 16px;
+    width: 75%;
+}
+
+.election-list-header-logo {
+    border-radius: 50%;
+    width: 10%;
+}
+
+.election-list-header-subtitle {
+    color: var(--bg-disabled);
+}
+
+.election-list-header-title {
+    font-size: 32px;
+}
+
+.election-list-header-titles-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 16px;
+}
