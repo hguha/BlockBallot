@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Common/Button';
 import CreateElectionModal from './CreateElectionModal';
+import AdminSettings from './AdminSettings';
 
 import '../../styles/ColorScheme.css';
 import '../../styles/AdminDashboard.css';
@@ -114,18 +115,6 @@ function AdminHome(props) {
                 <Button onClick={createElection} text="Create New Election"/>
             </div>
             <CreateElectionModal onClose={() => { setShowModal(false); }} show={showModal} />
-        </div>
-    )
-}
-
-function AdminSettings(props) {
-    const {
-        username = "Settings",
-    } = props;
-
-    return (
-        <div>
-            {username}
         </div>
     )
 }
