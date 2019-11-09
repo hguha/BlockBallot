@@ -9,6 +9,7 @@ import logo from '../../assets/logos/logo.png';
 
 function AdminLogin() {
     const [isReadySubmit, setIsReadySubmit] = useState(false);
+    const [loginFailed, setLoginFailed] = useState(false);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -22,9 +23,12 @@ function AdminLogin() {
     }
 
     function tryLogin() {
+        setLoginFailed(false);
+        if(username != "admin" && password != "admin") setLoginFailed(true); //if not, add some red text under Login that says "username or password was incorrect"
+        else window.location.href = "/admin/dashboard";
         //api request to server, check if login exists
         //if exists, route them to new page
-        //if not, add some red text under Login that says "username or password was incorrect"
+        //TEMP
     }
 
     return (
@@ -41,6 +45,10 @@ function AdminLogin() {
             <div className="admin-login-submit-container">
                 <Button onClick={tryLogin} text="Login" enabled={isReadySubmit} variant="bg-primary-outline" />
             </div>
+            <div className="admin-login-failure">
+                {loginFailed ? "Invalid Username or Password" : ""}
+            </div>
+
         </div>
     );
 }

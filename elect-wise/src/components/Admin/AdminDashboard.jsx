@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Button from '../Common/Button';
+import CreateElectionModal from './CreateElectionModal';
 
 import '../../styles/ColorScheme.css';
 import '../../styles/AdminDashboard.css';
@@ -21,31 +23,59 @@ function AdminDashboard(props) {
         username
     } = props;
 
+
+    const [currentPage, setCurrentPage] = useState(0);
+
+    function setPage(page){
+      setCurrentPage(page)
+    }
+
+    function renderCurrentPage() {
+        switch(currentPage) {
+            case 0:
+                return(<AdminHome />);
+            case 1:
+                return(<AdminSettings />);
+            case 2:
+                //stuff with ending sessions
+                window.location.href = "/admin";
+        }
+    }
+
     return (
         <div className="admin-dashboard-container">
-            <AdminSidebar organization={organization} username={username} />
+            <AdminSidebar setPage={setPage} organization={organization} username={username} />
+            <div className="admin-dashboard-current-page-container">
+                {renderCurrentPage()}
+            </div>
         </div>
     );
 }
+
 function AdminSidebar(props) {
     const {
         organization,
         username,
+        setPage,
         menuItems = [
             {
-                name : "Home",
-                route : "/admin/dashboard",
-            },
-            {
                 name : "Elections",
-                route : "/admin/elections",
+                page :0
             },
             {
                 name : "Settings",
-                route : "/admin/settings",
+                page: 1
+            },
+            {
+                name : "Logout",
+                page: 2
             }
         ]
     } = props;
+
+    function sendData(page) {
+         props.setPage(page);
+    }
 
     return (
         <div className="admin-sidebar-container">
@@ -60,12 +90,47 @@ function AdminSidebar(props) {
             </div>
             <div className="admin-sidebar-menu">
               {menuItems.map((item) => {
-                return <div class="menu-item"><a src={item.route}>{item.name}</a></div>
+                return <div className="menu-item"><a onClick={() => sendData(item.page)}>{item.name}</a></div>
               })}
             </div>
         </div>
     )
 }
+
+function AdminHome(props) {
+    const [showModal, setShowModal] = useState(false);
+    function createElection() {
+        setShowModal(true);
+    }
+
+    const {
+        username = "Elections",
+        parentCallback
+    } = props;
+
+    return (
+        <div>
+            <div className = "create-election">
+                <Button onClick={createElection} text="Create New Election"/>
+            </div>
+            <CreateElectionModal onClose={() => { setShowModal(false); }} show={showModal} />
+        </div>
+    )
+}
+
+function AdminSettings(props) {
+    const {
+        username = "Settings",
+    } = props;
+
+    return (
+        <div>
+            {username}
+        </div>
+    )
+}
+
+
 
 AdminDashboard.propTypes = propTypes;
 AdminDashboard.defaultProps = defaultProps;

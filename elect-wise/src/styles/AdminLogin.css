@@ -41,3 +41,11 @@
     margin-right: auto;
     width: 75%;
 }
+
+.admin-login-failure {
+    padding-top: 10px;
+    text-align: center;
+    color: red;
+    font-size: 0.7em;
+    text-transform: uppercase;
+}

@@ -6,8 +6,11 @@
 
 .admin-sidebar-container {
     background-color: var(--bg-dark);
-    height: 100vh;
+    height: 100%;
     width: 20%;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .admin-sidebar-organization {
@@ -55,4 +58,13 @@
 
 .admin-sidebar-menu .menu-item:first-of-type {
     border-top: 1px solid gray;
+}
+.admin-dashboard-current-page-container {
+    width: 80%;
+    margin-left: 20%;
+    padding: 2%;
+}
+
+.create-election {
+    width: 90%;
 }
