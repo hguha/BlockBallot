@@ -60,6 +60,11 @@ export function VoterReducer(state, action) {
         case 'attempLoadElections':
             updatedState.elections = mockElections;
             updatedState.electionsLoaded = true;
+            console.log(updatedState);
+            return updatedState;
+        case "openBallot":
+            updatedState.selectedElection = action.data;
+            console.log(updatedState);
             return updatedState;
         default:
             return initialState;

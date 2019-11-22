@@ -1,0 +1,86 @@
+.animate-in {
+    -webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.election-ballot-receipt-container {
+    background-color: rgba(63, 64, 69, 0.5);
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.election-ballot-receipt {
+    background-color: var(--bg-light);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0px 32px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+    width: 30%;
+
+    -moz-box-shadow:    0px 2px 5px 2px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.25);
+    box-shadow:         0px 2px 5px 2px rgba(0, 0, 0, 0.25);
+
+    -webkit-transform: translateY(-300%);
+	-moz-transform: translateY(-300%);
+	-ms-transform: translateY(-300%);
+    transform: translateY(-300%);
+	-webkit-transition: ease-in-out 250ms;
+	-moz-transition: ease-in-out 250ms;
+    transition: ease-in-out 250ms;
+}
+
+.election-ballot-receipt-divider-heavy {
+    border-bottom: 2px solid var(--bg-disabled);
+    padding: 2px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.election-ballot-receipt-divider-light {
+    border-bottom: 2px dotted var(--bg-disabled);
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.election-ballot-receipt-footer-button-container {
+    width: 40%;
+}
+
+.election-ballot-receipt-footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 32px;
+}
+
+.election-ballot-receipt-item-category {
+    color: var(--bg-disabled);
+}
+
+.election-ballot-receipt-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 0px;
+}
+
+.election-ballot-receipt-title {
+    font-size: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 8px;
+}

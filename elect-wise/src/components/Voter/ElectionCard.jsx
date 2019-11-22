@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import Button from '../Common/Button';
 import { FiActivity, FiBookOpen, FiBook } from 'react-icons/fi';
 
-import '../../styles/ColorScheme.css';
-import '../../styles/ElectionCard.css';
+import '../../styles/Common/ColorScheme.css';
+import '../../styles/Voter/ElectionCard.css';
 
 const propTypes = {
     election: PropTypes.object,

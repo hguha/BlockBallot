@@ -2,42 +2,45 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import ElectionCard from '../Voter/ElectionCard';
-import ElectionModal from '../Voter/ElectionModal';
 
-import '../../styles/ColorScheme.css';
-import '../../styles/ElectionList.css';
+import '../../styles/Common/ColorScheme.css';
+import '../../styles/Voter/ElectionList.css';
+import '../../styles/Common/Transitions.css';
 import logo from '../../assets/logos/logo.png';
 
 const propTypes = {
     elections: PropTypes.array,
-    isLoading: PropTypes.bool // For when we have backend to talk to
+    isLoading: PropTypes.bool, // For when we have backend to talk to
+    onElectionClick: PropTypes.func
 };
 
 const defaultProps = {
     elections: [],
-    isLoading: false
+    isLoading: false,
+    onElectionClick: () => {}
 };
 
 function ElectionList(props) {
     const {
         elections,
-        isLoading
+        isLoading,
+        onElectionClick
     } = props;
 
-    const [showModal, setShowModal] = useState(false);
-    const [selectedElection, setSelectedElection] = useState({});
+    const [animation, setAnimation] = useState("slide-in-left");
 
     if (isLoading){} // silencing warning on not using this prop for now
 
     function handleElectionClick(election) {
-        setSelectedElection(election);
-        setShowModal(true);
+        setAnimation("slide-out-left");
+        setTimeout(() => onElectionClick(election), 500);
     }
 
     function renderElectionCards() {
         const cards = elections.map(election => {
             return (
                 <ElectionCard
+                    // onClick={() => onElectionClick(election)}
                     onClick={() => handleElectionClick(election)}
                     election={election}
                 />
@@ -49,7 +52,9 @@ function ElectionList(props) {
     function renderHeader() {
         return (
             <div className="election-list-header-container">
-                <img className="election-list-header-logo" src={logo} alt="ElectWise" />
+                <div className="election-list-header-logo-container">
+                    <img className="election-list-header-logo" src={logo} alt="ElectWise" />
+                </div>
                 <div className="election-list-header-titles-container">
                     <div className="election-list-header-title">
                         Available Elections
@@ -63,8 +68,7 @@ function ElectionList(props) {
     }
 
     return (
-        <div className="election-list-container">
-            <ElectionModal election={selectedElection} onClose={() => { setShowModal(false); }} show={showModal} />
+        <div className={`election-list-container ${animation}`}>
             {renderHeader()}
             {renderElectionCards()}
         </div>

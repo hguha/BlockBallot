@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 
-import '../../styles/Input.css';
-import '../../styles/ColorScheme.css';
+import '../../styles/Common/Input.css';
+import '../../styles/Common/ColorScheme.css';
 import "react-datepicker/dist/react-datepicker.css";
 
 const propTypes = {

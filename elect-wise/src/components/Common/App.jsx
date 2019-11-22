@@ -5,9 +5,8 @@ import AdminLogin from '../Admin/AdminLogin';
 import AdminDashboard from '../Admin/AdminDashboard';
 import VoterRegistration from '../Voter/VoterRegistration';
 import VoterDashboard from '../Voter/VoterDashboard';
-// import Login from './Login';
 
-import '../../styles/App.css';
+import '../../styles/Common/App.css';
 
 function App() {
   return (
@@ -26,12 +25,6 @@ function App() {
           <Route path="/">
             <VoterRegistration />
           </Route>
-          {/* <Route path="/voter">
-            <VoterRegistration />
-          </Route>
-          <Route path="/">
-            <Login />
-          </Route> */}
         </Switch>
       }
     </Router>

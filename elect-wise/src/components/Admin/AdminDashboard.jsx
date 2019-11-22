@@ -4,8 +4,8 @@ import Button from '../Common/Button';
 import CreateElectionModal from './CreateElectionModal';
 import AdminSettings from './AdminSettings';
 
-import '../../styles/ColorScheme.css';
-import '../../styles/AdminDashboard.css';
+import '../../styles/Common/ColorScheme.css';
+import '../../styles/Admin/AdminDashboard.css';
 import logo from '../../assets/logos/logo.png';
 
 const propTypes = {

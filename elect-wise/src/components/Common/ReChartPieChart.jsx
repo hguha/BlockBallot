@@ -74,12 +74,12 @@ function ReChartPieChart(props) {
     }
 
     return (
-        <PieChart width={400} height={250}>
+        <PieChart width={450} height={250}>
             <Pie
                 activeIndex={activeIndex}
                 activeShape={renderActiveShape}
                 data={data}
-                cx={200}
+                cx={225}
                 cy={125}
                 innerRadius={60}
                 outerRadius={80}

@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import Button from '../Common/Button';
 import Input from '../Common/Input';
 
-import '../../styles/ColorScheme.css';
-import '../../styles/AdminLogin.css';
+import '../../styles/Common/ColorScheme.css';
+import '../../styles/Admin/AdminLogin.css';
 import logo from '../../assets/logos/logo.png';
 
 function AdminLogin() {

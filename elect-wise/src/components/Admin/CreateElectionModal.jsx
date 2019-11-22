@@ -5,8 +5,8 @@ import Button from '../Common/Button';
 import ReChartPieChart from '../Common/ReChartPieChart';
 import { FiActivity, FiBookOpen, FiBook } from 'react-icons/fi';
 
-import '../../styles/ColorScheme.css';
-import '../../styles/ElectionModal.css';
+import '../../styles/Common/ColorScheme.css';
+// import '../../styles/ElectionModal.css';
 
 const propTypes = {
     election: PropTypes.object,

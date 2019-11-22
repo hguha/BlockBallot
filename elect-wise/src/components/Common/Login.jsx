@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Button from './Button';
 import Input from './Input';
 
-import '../../styles/ColorScheme.css';
-import '../../styles/AdminLogin.css';
+import '../../styles/Common/ColorScheme.css';
+import '../../styles/Admin/AdminLogin.css';
 import logo from '../../assets/logos/logo.png';
 
 function Login() {

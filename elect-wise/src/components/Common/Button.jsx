@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../../styles/ColorScheme.css';
-import '../../styles/Button.css';
+import '../../styles/Common/ColorScheme.css';
+import '../../styles/Common/Button.css';
 
 const propTypes = {
     enabled: PropTypes.bool,

@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import Button from '../Common/Button';
 import Input from '../Common/Input';
 
-import '../../styles/ColorScheme.css';
-import '../../styles/VoterRegistration.css';
+import '../../styles/Common/ColorScheme.css';
+import '../../styles/Voter/VoterRegistration.css';
 import logo from '../../assets/logos/logo.png';
 
 function VoterRegistration() {
@@ -28,29 +28,31 @@ function VoterRegistration() {
     }
 
     return (
-        <div className="voter-registration-container">
-            <div className="voter-registration-logo-container">
-                <img className="voter-registration-logo" src={logo} alt="ElectWise" />
+        <>
+            <div className="voter-registration-container">
+                <div className="voter-registration-logo-container">
+                    <img className="voter-registration-logo" src={logo} alt="ElectWise" />
+                </div>
+                <div className="voter-registration-title">
+                    Enter your credentials to get started.
+                </div>
+                <div className="voter-registration-input-container">
+                    <Input placeholder="First and Last Name" onChange={handleTextChange} name="field-name" />
+                </div>
+                <div className="voter-registration-input-container">
+                    <Input placeholder="Date of Birth" onChange={handleDateChange} isDate={true} />
+                </div>
+                <div className="voter-registration-input-container">
+                    <Input placeholder="Social Security Number" onChange={handleTextChange} name="field-ssn" isPassword={true} />
+                </div>
+                <div className="voter-registration-input-container">
+                    <Input placeholder="Email Address" onChange={handleTextChange} name="field-email" />
+                </div>
+                <div className="voter-registration-submit-container">
+                    <Button text="Verify" enabled={isReadySubmit} variant="bg-primary-outline" />
+                </div>
             </div>
-            <div className="voter-registration-title">
-                Enter your credentials to get started.
-            </div>
-            <div className="voter-registration-input-container">
-                <Input placeholder="First and Last Name" onChange={handleTextChange} name="field-name" />
-            </div>
-            <div className="voter-registration-input-container">
-                <Input placeholder="Date of Birth" onChange={handleDateChange} isDate={true} />
-            </div>
-            <div className="voter-registration-input-container">
-                <Input placeholder="Social Security Number" onChange={handleTextChange} name="field-ssn" />
-            </div>
-            <div className="voter-registration-input-container">
-                <Input placeholder="Email Address" onChange={handleTextChange} name="field-email" />
-            </div>
-            <div className="voter-registration-submit-container">
-                <Button text="Verify" enabled={isReadySubmit} variant="bg-primary-outline" />
-            </div>
-        </div>
+        </>
     );
 }
 
