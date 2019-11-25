@@ -1,3 +1,27 @@
+/* Desktop variables */
+:root {
+    --voter-registration-width: 30%;
+}
+
+/* Mobile variables */
+@media screen and (max-width: 1024px) {
+    :root {
+        --voter-registration-width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --voter-registration-width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    :root {
+        --voter-registration-width: 90%;
+    }
+}
+
 .voter-registration-container {
     background-color: var(--bg-light);
     border-radius: 16px;
@@ -5,7 +29,7 @@
     margin: auto;
     padding: 16px 0px;
     position: fixed;
-    width: 30%;
+    width: var(--voter-registration-width);
 
     top: 0;
     left: 0;
@@ -27,6 +51,7 @@
 
 .voter-registration-logo {
     border-radius: 50%;
+    max-width: 200px;
     width: 50%;
 }
 
