@@ -1,0 +1,68 @@
+/* Desktop variables */
+:root {
+    --election-list-header-width: 75%;
+    --election-list-header-logo-basis: 15%;
+    --election-list-header-title-font-size: 2em;
+    --election-list-header-subtitle-font-size: 1em;
+}
+
+/* Mobile variables */
+@media screen and (max-width: 480px) {
+    :root {
+        --election-list-header-logo-basis: 0%;
+        --election-list-header-title-font-size: 1.5em;
+        --election-list-header-subtitle-font-size: 0.9em;
+    }
+}
+
+.election-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 32px;
+    justify-content: center;
+}
+
+.election-list-header-container {
+    background-color: var(--bg-light);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+    padding: 16px;
+    width: var(--election-list-header-width);
+}
+
+.election-list-header-logo-container {
+    display: flex;
+    flex-basis: var(--election-list-header-logo-basis);
+    justify-content: flex-end;
+}
+
+.election-list-header-logo {
+    border-radius: 50%;
+    width: 100%;
+}
+
+.election-list-header-subtitle {
+    color: var(--bg-disabled);
+    font-size: var(--election-list-header-subtitle-font-size);
+}
+
+.election-list-header-title {
+    font-size: var(--election-list-header-title-font-size);
+}
+
+.election-list-header-titles-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 16px;
+}
+
+.election-list-loading-container {
+    display: flex;
+    justify-content: center;
+    margin: 32px;
+    width: 100%;
+}
