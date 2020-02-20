@@ -4,26 +4,16 @@ var UsersDBConnectionModule = require("../sql/UsersDBConnection");
 var usersDBConnection = UsersDBConnectionModule.connection;
 usersDBConnection.connect();
 
-router.get('/voter/fName/:fName/lName/:lName/dob/:dob', function(req, res, next) {
-  //usersDBConnection.connect();
-
-  console.log(req.params);
+router.get('/voter/fName/:fName/lName/:lName/dob/:dob', function(req, res) {
   const { fName, lName, dob } = req.params;
 
-  const query = `SELECT * FROM login WHERE firstname = ${fName} AND lastname = ${lName} AND birth = ${dob}`;
-  const response = usersDBConnection.query(query, function(error, results, fields) {
+  const query = `SELECT * FROM userdb WHERE firstname = "${fName}" AND lastname = "${lName}" AND birth = "${dob}"`;
+  usersDBConnection.query(query, function(error, results) {
     if (error) {
-      console.log(error);
-    } else {
-      console.log(results);
-      console.log(fields);
+      res.send(error);
     }
-
-    res.send(results);
+    res.send(JSON.stringify(results));
   });
-
-  //usersDBConnection.end();
-  res.send(response);
 });
 
 module.exports = router;
