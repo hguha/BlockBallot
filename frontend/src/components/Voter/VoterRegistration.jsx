@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Button from '../Common/Button';
 import Input from '../Common/Input';
+import BarLoader from 'react-spinners/BarLoader';
 import { authenticateVoter } from "../../services/AuthService";
 
 import '../../styles/Common/ColorScheme.css';
@@ -9,6 +10,8 @@ import '../../styles/Voter/VoterRegistration.css';
 import logo from '../../assets/logos/logo.png';
 
 function VoterRegistration() {
+    const [isVerifying, setIsVerifying] = useState(false);
+    const [isNotVerified, setIsNotVerified] = useState(false);
     const [isReadySubmit, setIsReadySubmit] = useState(false);
     const [fName, setFName] = useState("");
     const [lName, setLName] = useState("");
@@ -29,8 +32,28 @@ function VoterRegistration() {
     }
 
     async function handleVerification() {
+        setIsVerifying(true);
         const response = await authenticateVoter(fName, lName, dob);
-        console.log(response);
+        setIsVerifying(false);
+        response.length === 0 ? setIsNotVerified(true) : setIsNotVerified(false);
+    }
+
+    function renderNotVerified() {
+        return (
+            <div className="voter-registration-not-verified-container">
+                <div className="voter-registation-not-verified-text bg-error">
+                    No user found with provided crendentials.
+                </div>
+            </div>
+        )
+    }
+
+    function renderLoader() {
+        return (
+            <div className="voter-registration-loader">
+                <BarLoader css="width:50%" color={"#5157bf"} loading={isVerifying} />
+            </div>
+        );
     }
 
     return (
@@ -42,6 +65,7 @@ function VoterRegistration() {
                 <div className="voter-registration-title">
                     Enter your credentials to get started.
                 </div>
+                {isNotVerified ? renderNotVerified() : null}
                 <div className="voter-registration-input-container">
                     <Input placeholder="First Name" onChange={handleTextChange} name="field-fname" />
                 </div>
@@ -55,8 +79,9 @@ function VoterRegistration() {
                     <Input placeholder="Email Address" onChange={handleTextChange} name="field-email" />
                 </div>
                 <div className="voter-registration-submit-container">
-                    <Button text="Verify" enabled={isReadySubmit} variant="bg-primary-outline" onClick={() => handleVerification()} />
+                    <Button text="Verify" enabled={isReadySubmit && !isVerifying} variant="bg-primary-outline" onClick={() => handleVerification()} />
                 </div>
+                { isVerifying ? renderLoader() : null }
             </div>
         </>
     );

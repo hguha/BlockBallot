@@ -49,6 +49,12 @@
     text-align: center;
 }
 
+.voter-registration-loader {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
 .voter-registration-logo {
     border-radius: 50%;
     max-width: 200px;
@@ -59,6 +65,21 @@
     text-align: center;
     margin-bottom: 8px;
     width: 100%;
+}
+
+.voter-registration-not-verified-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.voter-registation-not-verified-text {
+    border-radius: 16px;
+    font-size: 14px;
+    padding: 4px 0px;
+    text-align: center;
+    width: 75%;
 }
 
 .voter-registration-submit-container {
